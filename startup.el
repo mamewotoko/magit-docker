@@ -6,4 +6,5 @@
 (package-initialize)
 (package-refresh-contents)
 (package-install 'magit nil)
+(package-install 'git-link nil)
 (package-install 'helm nil)
