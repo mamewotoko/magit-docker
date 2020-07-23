@@ -20,6 +20,7 @@ COPY .bashrc /root/.bashrc
 RUN emacs --batch -l /startup.el
 RUN rm /startup.el
 RUN mkdir /.ssh
-RUN mkdir /gitrepo; cd gitrepo
+RUN mkdir /.ssh /gitrepo
 
-CMD cd /gitrepo; emacs --no-window-system --eval '(progn (magit-status) (delete-other-windows))'
+WORKDIR /gitrepo
+CMD [ "emacs", "--no-window-system", "--eval",  "(progn (magit-status) (delete-other-windows))" ]
