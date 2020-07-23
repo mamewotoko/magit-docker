@@ -4,8 +4,13 @@ services:
   magit:
     build:
       context: .
+      dockerfile: Dockerfile
     image: mamewotoko/magit-docker
     network_mode: host
+    environment:
+      # to fit to terminal size
+      - COLUMNS=${COLUMNS}
+      - LINES=${LINES}
     volumes:
       - ./:/gitrepo
       # ssh key
@@ -19,6 +24,10 @@ services:
       context: .
       dockerfile: Dockerfile.alpine
     image: mamewotoko/magit-docker:slim
+    environment:
+      # to fit to terminal size
+      - COLUMNS=$COLUMNS
+      - LINES=$LINES
     volumes:
       - ./:/gitrepo
       # ssh key
