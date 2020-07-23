@@ -6,6 +6,11 @@
 
 (menu-bar-mode -1)
 
+;; custom
+(global-set-key "\C-xg" 'magit-status)
+(global-set-key "\C-h" 'backward-delete-char)
+(global-set-key [f8] 'shell)
+
 (custom-set-faces
  ;; other faces
  '(magit-diff-added ((((type tty)) (:foreground "green"))))
