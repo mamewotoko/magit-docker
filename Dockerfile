@@ -7,7 +7,9 @@ RUN apt-get update && \
   emacs-nox \
   ca-certificates \
   locales \
-  tzdata
+  tzdata \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
 
 #  elpa-magit 
 
