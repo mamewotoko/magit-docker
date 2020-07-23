@@ -1,0 +1,27 @@
+version: '3'
+services:
+  # ubuntu
+  magit:
+    build:
+      context: .
+    image: mamewotoko/magit-docker
+    network_mode: host
+    volumes:
+      - ./:/gitrepo
+      # ssh key
+      #- ./.ssh:/root/.sssh
+      # git config
+      #- ./.gitconfig:/root/.gitconfig
+
+  # alpine
+  magit-slim:
+    build:
+      context: .
+      dockerfile: Dockerfile.alpine
+    image: mamewotoko/magit-docker:slim
+    volumes:
+      - ./:/gitrepo
+      # ssh key
+      #- ./.ssh:/root/.sssh
+      # git config
+      #- ./.gitconfig:/root/.gitconfig
