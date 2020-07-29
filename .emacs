@@ -11,6 +11,11 @@
 (global-set-key "\C-h" 'backward-delete-char)
 (global-set-key [f8] 'shell)
 
+(set-default-coding-systems 'utf-8)
+(set-selection-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+
 (custom-set-faces
  ;; other faces
  '(magit-diff-added ((((type tty)) (:foreground "green"))))
