@@ -19,7 +19,7 @@ COPY .bashrc /root/.bashrc
 
 RUN emacs --batch -l /startup.el
 RUN rm /startup.el
-RUN mkdir /.ssh /gitrepo
+RUN mkdir /root/.ssh /gitrepo
 
 WORKDIR /gitrepo
 CMD [ "emacs", "--no-window-system", "--eval",  "(progn (magit-status) (delete-other-windows))" ]
